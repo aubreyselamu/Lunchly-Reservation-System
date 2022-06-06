@@ -1,5 +1,6 @@
 /** Customer for Lunchly */
 
+const { user } = require("pg/lib/defaults");
 const db = require("../db");
 const Reservation = require("./reservation");
 
@@ -52,6 +53,14 @@ class Customer {
 
     return new Customer(customer);
   }
+
+  /** get full name of customer. */
+  get fullName(){
+    return `${this.firstName} ${this.lastName}`
+  }
+
+
+  
 
   /** get all reservations for this customer. */
 
